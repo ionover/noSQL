@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3.7"
 
 services:
   mongo:
@@ -18,6 +18,8 @@ services:
       dockerfile: Dockerfile
     container_name: java-app
     restart: unless-stopped
+    environment:
+      SPRING_DATA_MONGODB_HOST: mongo
     ports:
       - "8888:8888"
     depends_on:
